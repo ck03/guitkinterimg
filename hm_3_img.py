@@ -27,7 +27,7 @@ class GUI:
     def dbinfo(self):
         client = MongoClient(host="127.0.0.1", port=27017)
         collection = client["igimg"]["imginfo"]
-        dbinfo = collection.find({"cname": "黃上晏"})
+        dbinfo = collection.find({"cname": "XXX"})
         for i in dbinfo:
             self.result_list.append(i["cname"] + "_" + i["id"])
 
@@ -44,7 +44,7 @@ class GUI:
                 self.index -= 1
         # msg.showinfo("結果", saction)
         self.slbl.set(self.index)
-        wifi_img = Image.open(u'D:\\Study\\Python2\\03爬蟲\\IG_XXX\\{}.jpg'.format(self.result_list[self.index]))
+        wifi_img = Image.open(u'D:\\Study\\Python2\\IG_XXX\\{}.jpg'.format(self.result_list[self.index]))
         lblimg = ImageTk.PhotoImage(wifi_img)
         self.lbl2.configure(image=lblimg)
         self.lbl2.image = lblimg
